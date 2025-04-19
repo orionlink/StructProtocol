@@ -24,16 +24,7 @@ struct ProtocolHeader
 //#define ProtocolHeaderSize 8
 constexpr int ProtocolHeaderSize = sizeof(ProtocolHeader);
 
-// 平台相关的结构体打包宏定义
-#if defined(_MSC_VER)
-#define PACK_STRUCT_BEGIN __pragma(pack(push, 1))
-#define PACK_STRUCT_END   __pragma(pack(pop))
-#else
-#define PACK_STRUCT_BEGIN
-#define PACK_STRUCT_END    __attribute__((packed))
-#endif
-
-// 字节序转换工具类
+// 瀛楄妭搴忚浆鎹㈠伐鍏风被
 class ByteOrder {
 public:
     static bool IsBigEndian() {
